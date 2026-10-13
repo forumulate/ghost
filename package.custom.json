@@ -1,0 +1,21 @@
+{
+  "config": {
+    "custom": {
+      "forumulate_org": {
+        "type": "text",
+        "default": "",
+        "description": "Forumulate organization slug or id"
+      },
+      "forumulate_space": {
+        "type": "text",
+        "default": "",
+        "description": "Default Forumulate space (comments and widgets)"
+      },
+      "forumulate_url": {
+        "type": "text",
+        "default": "https://forumulate.com",
+        "description": "Your Forumulate address or custom domain, no trailing slash"
+      }
+    }
+  }
+}

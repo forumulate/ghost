@@ -1,0 +1,14 @@
+{{!--
+  Forumulate docs search / ask-AI box.
+    {{> "forumulate/widget"}}
+    {{> "forumulate/widget" space="docs" mode="ask" placeholder="Ask the docs"}}
+--}}
+<div class="forumulate-widget">
+  <script async
+    src="{{#if @custom.forumulate_url}}{{@custom.forumulate_url}}{{else}}https://forumulate.com{{/if}}/api/embed/widget.js"
+    data-org="{{@custom.forumulate_org}}"
+    data-space="{{#if space}}{{space}}{{else}}{{@custom.forumulate_space}}{{/if}}"
+    {{#if mode}}data-mode="{{mode}}"{{/if}}
+    {{#if placeholder}}data-placeholder="{{placeholder}}"{{/if}}
+    {{#if accent}}data-accent="{{accent}}"{{/if}}></script>
+</div>

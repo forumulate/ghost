@@ -1,0 +1,10 @@
+{{!--
+  The "What's new" changelog bell, e.g. in the site header:
+    {{> "forumulate/changelog" space="changelog"}}
+--}}
+<span class="forumulate-changelog">
+  <script async
+    src="{{#if @custom.forumulate_url}}{{@custom.forumulate_url}}{{else}}https://forumulate.com{{/if}}/api/embed/changelog.js"
+    data-org="{{@custom.forumulate_org}}"
+    data-space="{{#if space}}{{space}}{{else}}{{@custom.forumulate_space}}{{/if}}"></script>
+</span>

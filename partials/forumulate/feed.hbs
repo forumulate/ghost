@@ -1,0 +1,14 @@
+{{!--
+  A list of your latest Forumulate blog posts, forum topics or changelog
+  releases, rendered by the <forumulate-feed> custom element (@forumulate/embed).
+  Ghost themes cannot fetch other sites on the server, so this one renders in
+  the browser; link to your Forumulate pages from navigation for crawlers.
+    {{> "forumulate/feed" space="community" kind="forum" limit="5"}}
+--}}
+<forumulate-feed
+  org="{{@custom.forumulate_org}}"
+  space="{{#if space}}{{space}}{{else}}{{@custom.forumulate_space}}{{/if}}"
+  api="{{#if @custom.forumulate_url}}{{@custom.forumulate_url}}{{else}}https://forumulate.com{{/if}}/api"
+  {{#if kind}}kind="{{kind}}"{{/if}}
+  {{#if limit}}limit="{{limit}}"{{/if}}></forumulate-feed>
+<script type="module" async src="https://cdn.jsdelivr.net/npm/@forumulate/embed@1"></script>

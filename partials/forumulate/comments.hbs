@@ -1,0 +1,16 @@
+{{!--
+  Forumulate comments for the current post. Use inside {{#post}}:
+    {{> "forumulate/comments"}}
+    {{> "forumulate/comments" space="blog-comments" theme="dark" accent="#0a7"}}
+  Handlebars {{ }} escapes every value; the topic is found from the post URL.
+--}}
+<div class="forumulate-comments">
+  <script async
+    src="{{#if @custom.forumulate_url}}{{@custom.forumulate_url}}{{else}}https://forumulate.com{{/if}}/api/embed/comments.js"
+    data-org="{{@custom.forumulate_org}}"
+    data-space="{{#if space}}{{space}}{{else}}{{@custom.forumulate_space}}{{/if}}"
+    data-article-url="{{url absolute="true"}}"
+    {{#if theme}}data-theme="{{theme}}"{{/if}}
+    {{#if accent}}data-accent="{{accent}}"{{/if}}
+    {{#if topic}}data-topic="{{topic}}"{{/if}}></script>
+</div>
